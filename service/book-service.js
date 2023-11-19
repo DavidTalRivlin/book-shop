@@ -36,6 +36,9 @@ function updateBook(bookId, newPrice) {
       renderBooks()
 }
 
+function getBookById(bookId) {
+      return gBooks.find(book => bookId === book.id)
+  }
 
       //////////// private functions
 

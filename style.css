@@ -1,64 +1,102 @@
-*{
+* {
       margin: auto;
 }
-body{
+
+body {
       width: 100vw;
 
 }
 
-table, th, td {
-      
+table,
+th,
+td {
+
       border: 1px solid;
-      border-collapse: collapse ;
+      border-collapse: collapse;
+      padding: 5px;
 }
 
-.header{
+.header {
       margin: auto;
       width: 60vw;
       font-size: 22px;
-      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       margin-bottom: 20px;
 
 }
 
 .headerImg {
-      
+
       height: 100px;
 }
 
-.book-img{
-      height: 150px
+.read-book-img {
+      height: 150px;
+      margin: auto;
+      margin-bottom: 30px;
 }
 
-.read-book-btn{
-background-color: rgb(94, 94, 236);
+.read-book-btn {
+      background-color: rgb(94, 94, 236);
 }
 
-.update-book-btn{
-background-color: rgb(235, 235, 110);
+.update-book-btn {
+      background-color: rgb(235, 235, 110);
 }
 
-.delete-book-btn{
-background-color: rgb(247, 122, 122);
+.delete-book-btn {
+      background-color: rgb(247, 122, 122);
 }
 
-.book-btn{
+.book-btn {
       cursor: pointer;
 }
-.book-btn:hover{
-filter: brightness(75%);
+
+.book-btn:hover {
+      filter: brightness(75%);
 }
 
 .user-msg {
-	position: fixed;
-	bottom: -100px;
-	right: 10px;
+      position: fixed;
+      bottom: -100px;
+      right: 10px;
 
-	background-color: #111;
-	padding: 10px;
-    transition: bottom 0.5s;
+      background-color: #ffffff;
+      padding: 10px;
+      color: rgb(0, 0, 0);
+      transition: bottom 0.5s;
+      border: 2px solid black;
+      border-radius: 10px;
 }
 
 .user-msg.open {
-	bottom: 10px;
+      bottom: 10px;
+}
+
+
+.modal {
+      position: absolute;
+      Right: 0px;
+      top: -400px;
+
+      height: 280px;
+      padding: 10px;
+      background-color: #ffffff;
+      border: 2px solid black;
+      border-radius: 10px;
+      text-align: center;
+      transition: top 1s;
+}
+
+.modal.open {
+      top: 0;
+}
+
+.modal h3 {
+      color: rgb(0, 0, 0);
+      text-transform: capitalize;
+}
+
+.modal h4 span {
+      color: rgb(0, 191, 45);
 }
