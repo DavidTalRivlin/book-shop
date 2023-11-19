@@ -1,8 +1,10 @@
 'use strict'
 
+
 function onInit() {
       renderBooks()
 }
+
 
 function renderBooks() {
 
@@ -11,7 +13,7 @@ function renderBooks() {
       var strHtml = `
       <thead>
          <tr>
-         <td>PN</td>
+         <td>SN</td>
          <td>Title</td>
          <td>Price</td>
          <td>Actions</td>
@@ -42,19 +44,24 @@ function renderBooks() {
 
 }
 
+
 function onAddBook() {
       var name = prompt('please enter book name')
       var price = prompt('please enter price')
-      if (!name && !price) return
-      
-      addBook(name, price)
+      var rate = -1
+      while (rate < 0 || rate > 10) {
+            rate = +prompt('please rate the book 0-10:')
+      }
+
+      addBook(name, price, rate)
       renderBooks()
 }
 
 
 function onDeleteBook(bookId) {
-      removeBook(bookId)
+      deleteBook(bookId)
       flashMsg(`Book removed successfully`)
+      renderBooks()
 }
 
 
@@ -63,30 +70,42 @@ function onUpdateBook(bookId) {
       if (!newBookPrice) return
       updateBook(bookId, newBookPrice)
       flashMsg(`Book's price updated successfully`)
+      renderBooks()
 }
 
 
 function onReadBook(bookId) {
       const book = getBookById(bookId)
       const elModal = document.querySelector('.modal')
-  
+
+      elModal.querySelector('h6 span').innerText = book.id
       elModal.querySelector('h3').innerText = book.name
       elModal.querySelector('h4 span').innerText = book.price
-      elModal.querySelector('img').src=book.imgUrl
-        
-      elModal.classList.add('open')
-  }
+      elModal.querySelector('img').src = book.imgUrl
+      elModal.querySelector('.book-rate').value = book.rate
 
-  function onCloseModal() {
+      elModal.classList.add('open')
+}
+
+
+function onCloseModal() {
       document.querySelector('.modal').classList.remove('open')
-  }
+}
+
 
 function flashMsg(msg) {
       const elUserMsg = document.querySelector('.user-msg')
-  
+
       elUserMsg.innerText = msg
       elUserMsg.classList.add('open')
       setTimeout(() => elUserMsg.classList.remove('open'), 3000)
-  }
+}
 
 
+function onUpdateRate() {
+      var bookId = document.querySelector('h6 span').innerText
+      console.log('bookId', bookId)
+      var bookRate = document.querySelector('.book-rate').value
+      console.log('bookRate', bookRate)
+      updateBookRate(bookId,bookRate)
+}

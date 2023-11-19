@@ -17,8 +17,9 @@
                   <span> Yina'al A Book </span>
                   <img class="headerImg" src="img/books.png" alt="pile-of-books" srcset="">
             </div>
-
-            <button class="add-book-btn" onclick="onAddBook()">ADD BOOK</button>
+            <div class="add-book-btn-div">
+                  <button class="add-book-btn book-btn " onclick="onAddBook()">ADD BOOK</button>
+            </div>
             <table class="books-table">
 
 
@@ -27,9 +28,15 @@
       <div class="user-msg"> </div>
 
       <div class="modal">
+
             <h3></h3>
             <h4>Price: &#x20AA;<span></span> </h4>
+            <h6>SN: <span></span> </h6>
             <img src="" alt="" class="read-book-img">
+            <h4>Rating:</h4>
+            <div>
+                  <input class="book-rate" type="number" min="0" max="10" value="" onchange="onUpdateRate()">
+            </div>
             <div>
                   <button onclick="onCloseModal()">Close</button>
             </div>

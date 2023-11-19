@@ -9,23 +9,22 @@ function saveBooks() {
 }
 
 
-function addBook(name, price) {
-      const book = _createBook(name, price)
+function addBook(name, price, rate) {
+      const book = _createBook(name, price,rate)
       gBooks.unshift(book)
 
       _saveBooksToStorage()
-      renderBooks()
+     
 }
 
 
-function removeBook(BookId) {
+function deleteBook(BookId) {
       const bookIdx = gBooks.findIndex(book => BookId === book.id)
       gBooks.splice(bookIdx, 1)
 
       _saveBooksToStorage()
-      renderBooks()
+      
 }
-
 
 
 function updateBook(bookId, newPrice) {
@@ -33,21 +32,30 @@ function updateBook(bookId, newPrice) {
       book.price = newPrice
 
       _saveBooksToStorage()
-      renderBooks()
+      
 }
+
 
 function getBookById(bookId) {
       return gBooks.find(book => bookId === book.id)
   }
 
+
+function updateBookRate(bookId, value){
+      var book = getBookById(bookId)
+      book.rate = value
+      _saveBooksToStorage()
+}
+
       //////////// private functions
 
-      function _createBook(name, price) {
+      function _createBook(name, price, rate=0) {
             return {
                   id: makeId(),
                   name,
                   price,
                   imgUrl: `img/${getRandomInt(1, 6)}.jpg`,
+                  rate,
             }
       }
 
@@ -65,6 +73,7 @@ function getBookById(bookId) {
                               name: 'itchy nose giraffe',
                               price: 74,
                               imgUrl: 'img/giraffe.jpg',
+                              rate: 9
 
                         },
                         {
@@ -72,6 +81,7 @@ function getBookById(bookId) {
                               name: 'ayalet metayelet',
                               price: 50,
                               imgUrl: 'img/ayalet.jpg',
+                              rate: 8
 
                         },
                         {
@@ -79,6 +89,7 @@ function getBookById(bookId) {
                               name: 'stroy of a knight',
                               price: 70,
                               imgUrl: 'img/abir.jpg',
+                              rate:7
 
                         }]
                   saveToStorage('booksDB', books)

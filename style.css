@@ -16,6 +16,19 @@ td {
       padding: 5px;
 }
 
+
+.add-book-btn-div{
+      text-align: center;
+      margin: auto;
+      margin-bottom: 10px;
+      
+      
+}
+
+.add-book-btn{
+      background-color: rgb(120, 156, 66);
+}
+
 .header {
       margin: auto;
       width: 60vw;
@@ -79,8 +92,8 @@ td {
       Right: 0px;
       top: -400px;
 
-      height: 280px;
-      padding: 10px;
+      height: 300px;
+      padding: 20px;
       background-color: #ffffff;
       border: 2px solid black;
       border-radius: 10px;
