@@ -9,6 +9,7 @@ body{
 table, th, td {
       
       border: 1px solid;
+      border-collapse: collapse ;
 }
 
 .header{
@@ -21,6 +22,43 @@ table, th, td {
 }
 
 .headerImg {
-      width: 15vw;
-      height: 100%;
+      
+      height: 100px;
+}
+
+.book-img{
+      height: 150px
+}
+
+.read-book-btn{
+background-color: rgb(94, 94, 236);
+}
+
+.update-book-btn{
+background-color: rgb(235, 235, 110);
+}
+
+.delete-book-btn{
+background-color: rgb(247, 122, 122);
+}
+
+.book-btn{
+      cursor: pointer;
+}
+.book-btn:hover{
+filter: brightness(75%);
+}
+
+.user-msg {
+	position: fixed;
+	bottom: -100px;
+	right: 10px;
+
+	background-color: #111;
+	padding: 10px;
+    transition: bottom 0.5s;
+}
+
+.user-msg.open {
+	bottom: 10px;
 }
