@@ -2,6 +2,8 @@
 
 var gBooks = []
 const STORAGE_KEY = 'booksDB'
+var gSearchBy = ''
+
 _createBooks()
 
 function saveBooks() {
@@ -47,6 +49,14 @@ function updateBookRate(bookId, value){
       _saveBooksToStorage()
 }
 
+function searchBook(searchBy){
+      gBooks = loadFromStorage(STORAGE_KEY)
+      gSearchBy = searchBy
+      
+      const filteredBooks = gBooks.filter((book)=>book.name.includes(searchBy))
+      gBooks = filteredBooks
+      
+}
       //////////// private functions
 
       function _createBook(name, price, rate=0) {

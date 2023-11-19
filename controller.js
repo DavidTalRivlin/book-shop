@@ -4,8 +4,6 @@
 function onInit() {
       renderBooks()
 }
-
-
 function renderBooks() {
 
       const elTable = document.querySelector('.books-table')
@@ -38,9 +36,6 @@ function renderBooks() {
             </table>`
 
       elTable.innerHTML = strHtml
-
-
-
 
 }
 
@@ -104,8 +99,12 @@ function flashMsg(msg) {
 
 function onUpdateRate() {
       var bookId = document.querySelector('h6 span').innerText
-      console.log('bookId', bookId)
       var bookRate = document.querySelector('.book-rate').value
-      console.log('bookRate', bookRate)
       updateBookRate(bookId,bookRate)
+}
+
+function onSearchBook(ev){
+      
+      searchBook(ev.target.value)
+      renderBooks()
 }

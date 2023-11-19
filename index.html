@@ -17,7 +17,15 @@
                   <span> Yina'al A Book </span>
                   <img class="headerImg" src="img/books.png" alt="pile-of-books" srcset="">
             </div>
+            
+            <!-- <label>
+                  <span>Min Speed:</span>
+                  <input type="range" min="0" max="300" value="0" 
+                  onchange="this.title=this.value;onSetFilterBy({minSpeed: +this.value})" />
+            </label> -->
+            
             <div class="add-book-btn-div">
+                  <input type="search" onkeyup="onSearchBook(event)" placeholder="Search here" >
                   <button class="add-book-btn book-btn " onclick="onAddBook()">ADD BOOK</button>
             </div>
             <table class="books-table">
