@@ -37,3 +37,10 @@ function renderBooks() {
 
 
 }
+
+function onAddBook() {
+      var name = prompt('please enter book name')
+      var price = prompt('please enter price')
+      addBook(name,price)
+      renderBooks()
+}

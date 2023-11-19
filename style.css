@@ -1,18 +1,26 @@
-
 *{
-margin: auto;
+      margin: auto;
 }
-
 body{
       width: 100vw;
 
 }
 
 table, th, td {
+      
       border: 1px solid;
 }
 
+.header{
+      margin: auto;
+      width: 60vw;
+      font-size: 22px;
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin-bottom: 20px;
+
+}
+
 .headerImg {
-      width: 10vw;
+      width: 15vw;
       height: 100%;
 }
