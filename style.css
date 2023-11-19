@@ -1,0 +1,18 @@
+
+*{
+margin: auto;
+}
+
+body{
+      width: 100vw;
+
+}
+
+table, th, td {
+      border: 1px solid;
+}
+
+.headerImg {
+      width: 10vw;
+      height: 100%;
+}
