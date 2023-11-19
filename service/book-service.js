@@ -15,9 +15,23 @@ function addBook(name,price) {
       gBooks.unshift(book)
   
       _saveBooksToStorage()
-
   }
 
+// function removeBook(carId) {
+//       const carIdx = gCars.findIndex(car => carId === car.id)
+//       gCars.splice(carIdx, 1)
+      
+//       _saveCarsToStorage()
+//   }
+  
+
+
+//   function updateCar(carId, newSpeed) {
+//       const car = gCars.find(car => car.id === carId)
+//       car.maxSpeed = newSpeed
+  
+//       _saveCarsToStorage()
+//       return car
 
 
 

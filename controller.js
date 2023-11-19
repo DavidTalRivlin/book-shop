@@ -14,6 +14,8 @@ function renderBooks() {
 
       strHtml += keys.map((key) => `<th>${key}</th>`).join('')
 
+      strHtml += `<th>Actions</th>`
+
       strHtml += `
          </tr>
       </thead>
@@ -25,6 +27,11 @@ function renderBooks() {
       <td>${book.name}</td>
       <td>${book.price}</td>
       <td><img src="${book.imgUrl}" alt="${book.name}"></td>
+      <td> 
+      <button class="book-btn read-book-btn" onclick="onRead(${book.id})">Read</button>
+      <button class="book-btn update-book-btn" onclick="onUpdate(${book.id})">Update</button>
+      <button class="book-btn delete-book-btn" onclick="onDelete(${book.id})">Delete</button>
+      </td>
       </tr>`
       }).join('')
 
