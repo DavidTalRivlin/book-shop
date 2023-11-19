@@ -2,9 +2,11 @@
 
 
 function onInit() {
+      renderFilterByQueryParams()
       renderBooks()
 }
 function renderBooks() {
+      var books = getBooks()
 
       const elTable = document.querySelector('.books-table')
       // const keys = Object.keys(gBooks[0])
@@ -19,7 +21,7 @@ function renderBooks() {
          </thead>
          <tbody>`
 
-      strHtml += gBooks.map((book) => {
+      strHtml += books.map((book) => {
             return `<tr>
       <td>${book.id}</td>
       <td>${book.name}</td>
@@ -103,8 +105,31 @@ function onUpdateRate() {
       updateBookRate(bookId,bookRate)
 }
 
-function onSearchBook(ev){
-      
-      searchBook(ev.target.value)
+
+function onSetFilterBy(filterBy)  { //{minRate: 5}
+      filterBy = setBookFilter(filterBy)
       renderBooks()
+  
+      const queryParams = `?search=${filterBy.search}&minRate=${filterBy.minRate}`
+      const newUrl = 
+          window.location.protocol + "//" + 
+          window.location.host + 
+          window.location.pathname + queryParams
+  
+      window.history.pushState({ path: newUrl }, '', newUrl)
+  }
+
+  function renderFilterByQueryParams() {
+      const queryParams = new URLSearchParams(window.location.search)
+      const filterBy = {
+            search: queryParams.get('search') || '',
+            minRate: +queryParams.get('minRate') || 0
+      }
+      if (!filterBy.search && !filterBy.minRate) return
+
+      document.querySelector('.min-rate-input').value = filterBy.minRate
+      document.querySelector('.search-input').value = filterBy.search
+
+      setBookFilter(filterBy)
 }
+

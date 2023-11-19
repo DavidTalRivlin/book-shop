@@ -18,14 +18,14 @@
                   <img class="headerImg" src="img/books.png" alt="pile-of-books" srcset="">
             </div>
             
-            <!-- <label>
-                  <span>Min Speed:</span>
-                  <input type="range" min="0" max="300" value="0" 
-                  onchange="this.title=this.value;onSetFilterBy({minSpeed: +this.value})" />
-            </label> -->
+            <label>
+                  <span>Min rate:</span>
+                  <input class="min-rate-input" type="range" min="0" max="10" value="0" 
+                  onchange="this.title=this.value;onSetFilterBy({minRate: +this.value})" />
+            </label>
+            <input class="search-input" type="search" onkeyup="onSetFilterBy({search:this.value})" placeholder="Search here" >
             
             <div class="add-book-btn-div">
-                  <input type="search" onkeyup="onSearchBook(event)" placeholder="Search here" >
                   <button class="add-book-btn book-btn " onclick="onAddBook()">ADD BOOK</button>
             </div>
             <table class="books-table">
